@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Component/Header/Header';
 import MiddlePart from'./Component/View/MiddlePart';
 import Privateroute from './Router/PrivateRoutes';
-import Footer from './Component/Footer/Footer'
+// import Footer from './Component/Footer/Footer'
 import StudentPhoto from './Component/Dropdown/StudentPhoto';
 import Login from './Component/Auth/Login';
 import SignUp from './Component/Auth/SignUp';
@@ -33,7 +33,6 @@ class App extends Component {
             <Route exact path='/studentComment' component={StudentComment}/>
             
             </Switch>
-            <Footer/>
       </div>
       </BrowserRouter>
     )

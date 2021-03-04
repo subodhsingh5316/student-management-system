@@ -99,8 +99,12 @@ li a:hover {
   border: 0.5px solid grey;
 }
 .footer{
+  position: fixed;
+  bottom: 0px;
+  z-index:10px;
+  width: 100%;
   background-color: black;
-  height: 100px;
+  height: 50px;
   color:grey;
   text-align: center;
   padding-top: 70px;

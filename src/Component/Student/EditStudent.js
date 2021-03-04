@@ -78,7 +78,7 @@ class EditStudent extends React.Component {
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Submit
-  </Button>
+                    </Button>
                 </Form>
             </div>
         )

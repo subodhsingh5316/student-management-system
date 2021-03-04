@@ -9,6 +9,7 @@ class AddStudent extends Component {
       email: '',
       phone: '',
       dob: '',
+      disable:true
     }
   }
   handleSubmit = () => {
@@ -18,22 +19,23 @@ class AddStudent extends Component {
   handleName = (e) => {
     console.log('event call', e.target.value)
     this.setState({
-      name: e.target.value
+      name: e.target.value,
+      disable:false
     })
 
   }
   render() {
     console.log('add student',this.state.studentList)
     return (
-      <div>
-        <h1>Student List </h1>
-        <div className='row col-12'>
-          <input type='text' className='form-control col-md-5 mx-2 my-1' placeholder='Enter name' onChange={(e) => this.handleName(e)} />
-          <input type='email' className='form-control col-md-5 mx-2 my-1 ' placeholder='Enter email' onChange={(e) => this.setState({ email: e.target.value })} />
+      <div style={{textAlign:'center'}} >
+       
+        <div className='row col-12 my-4 mx-4 text-align-center'>
+          <input type='text' className='form-control col-md-5 mx-2 my-4' placeholder='Enter name' onChange={(e) => this.handleName(e)} />
+          <input type='email' className='form-control col-md-5 mx-2 my-4 ' placeholder='Enter email' onChange={(e) => this.setState({ email: e.target.value })} />
           <input type='number' className='form-control col-md-5 mx-2 my-1' placeholder='Enter phone' onChange={(e) => this.setState({ phone: e.target.value })} />
           <input type='date' className='form-control col-md-5 mx-2 my-1' placeholder='Enter dob' onChange={(e) => this.setState({ dob: e.target.value })} />
         </div>
-        <Button className='primary my-4' onClick={() => this.handleSubmit()}>Submit </Button>
+        <Button className='primary my-4 ' disabled={this.state.disable} onClick={() => this.handleSubmit()}>Submit </Button>
       </div>
     )
   }
@@ -42,7 +44,14 @@ class MultiComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      studentList: [],
+      studentList: [
+        {
+          name:"Sri Ram",
+          email:'ram@gmail.com',
+          phone:"638489876",
+          dob:'15-02-1996'
+        }
+      ],
       name: '',
       email: '',
       phone: '',
@@ -77,7 +86,7 @@ class MultiComponent extends Component {
   render() {
     console.log('table', this.state.studentList)
     return (
-      <div className='container text-center' style={{ padding: '40px', marginTop: '40px' }}>
+      <div  className='container'>
         <AddStudent studentInfo={this.addStudent}/>
         <Table responsive>
           <thead className='head'>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Table,Button } from 'react-bootstrap'
+
 import axios from 'axios'
 class StudentList extends React.Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class StudentList extends React.Component {
     render() {
         return (
             <div>
+            
             <div className='row d-flex justify-content-between my-2'>
             <h1>StudentList</h1>
             <Button onClick={()=>this.props.history.push('/add-student')} style={{width:'100px', height:'40px'}}>Add New</Button>

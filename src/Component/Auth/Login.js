@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { Button, Form, FormLabel, FormControl, FormText, FormGroup, FormCheck } from 'react-bootstrap'
+
 class Login extends React.Component {
     render() {
         return (
@@ -7,30 +9,33 @@ class Login extends React.Component {
 
 
 
-                <div id="id01" class="modal">
+                <div className='login-cont'>
+                    <Form>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control required type="email" placeholder="Enter email" style={{width:'80%'}} />
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                           </Form.Text>
+                        </Form.Group>
 
-                    <form >
-
-                        <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required />
-
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required />
-
-                            <button type="submit">Login</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember" /> Remember me
-      </label>
-                        </div>
-
-                        <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-                        </div>
-                    </form>
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control required type="password" placeholder="Password"  style={{width:'80%'}} />
+                        </Form.Group>
+                        <Form.Group controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Check me out" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Submit
+                       </Button><br/>
+                       <div class='d-flex row justify-content-between text-white'><small>If you'r New User</small>
+                       <a href='/signup' className='text-white color-white'><small>RESISTER</small></a>
+                       </div>
+                    </Form>
                 </div>
             </React.Fragment>
         )
     }
 }
+export default Login;

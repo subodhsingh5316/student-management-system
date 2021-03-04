@@ -45,7 +45,7 @@ class Student1 extends React.Component {
     render() {
         console.log('render', this.state.studentList)
         return (
-            <div className='container text-center' style={{ padding: '40px', marginTop: '40px' }}>
+            <div className='container' >
                 <h1>Student List </h1>
                 <div className='row col-12'>
                     <input type='text' className='form-control col-md-5 mx-2 my-1' placeholder='Enter name' onChange={(e) => this.handleName(e)} />
